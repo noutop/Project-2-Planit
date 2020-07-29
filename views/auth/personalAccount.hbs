@@ -1,0 +1,82 @@
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" href="https://cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.css" />
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+
+<nav id="navbar">
+  <div class="container">
+    <!-- Clicking on a logo usually brings the user back to the homepage -->
+    <a href="personalAccount"><img id="logo" src="images/logo.png" alt="logo"></a>
+    <ul>
+      <li><a href="about">About</a></li>
+      <li><a href="logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-content">
+  <img class="profile-img" src={{user.image}} id="profileImg">
+  <h2 id="welcome-margin-top">{{userName}}</h2>
+  <section>
+    <form action="/upload-profile-img" method="post" enctype="multipart/form-data">
+      <input type="file" name="user-img" id="myFile">
+      <label for="myFile" id="upload-file-label">Choose profile picture</label>
+      <div id="upload-deleteProfileImg">
+        <button type="submit" class="img-button">Upload</button>
+    </form>
+    <form action="/delete-profile-img" method="POST">
+      <button class="img-button img-button-top" type="submit">Delete</button>
+</div>
+</form>
+</section>
+
+<br>
+<a id="invite-button" href="/invite">Invite and Reminder</a>
+
+{{!-- start here --}}
+<div class="menu">
+  <button onclick="mobileMenuOpen()" class="dropbtn">Your event details</button>
+  <ul id="gmDropdown" class="dropdown-content">
+    {{#each userEvents}}
+    <li><a class="userEvents" href="/eventPage/{{this._id}}">{{this.text}}</a></li>
+    {{/each}}
+    {{#each userInvitedEvent}}
+    <li><a class="invitedList" href="/eventPage/{{this._id}}">{{this.text}}</a></li>
+    {{/each}}
+
+  </ul>
+</div>
+
+{{!-- end here --}}
+<div class="date">
+  <p id="date"></p>
+  <div id="txt"></div>
+</div>
+</div>
+
+
+<body onload="start();">
+  <p>{{message}}</p>
+
+  <div id="scheduler_here" class="dhx_cal_container" style="width: 80%; height: 60%; margin: 0 auto;">
+    <div class="dhx_cal_navline">
+      <div class="dhx_cal_prev_button">&nbsp;</div>
+      <div class="dhx_cal_next_button">&nbsp;</div>
+      <div class="dhx_cal_today_button"></div>
+      <div class="dhx_cal_date" style="color:white;"></div>
+      <div class="dhx_cal_tab" name="day_tab"></div>
+      <div class="dhx_cal_tab" name="week_tab"></div>
+      <div class="dhx_cal_tab" name="month_tab"></div>
+    </div>
+    <div class="dhx_cal_header"></div>
+    <div class="dhx_cal_data"></div>
+  </div>
+
+  <script src="/javascripts/script"></script>
+  <script src="https://cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.js"></script>
+  <script>
+    function mobileMenuOpen() {
+      document.getElementById("gmDropdown").classList.toggle("show");
+    }
+  </script>

@@ -1,0 +1,341 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #eeeeee;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%2300adb5' stroke-width='10' stroke-opacity='0.11'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+  box-sizing: border-box;
+
+}
+
+
+
+a {
+  color: #00b7ff;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+/* email confirmation page css */
+.emailConfirmation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 88%;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+}
+
+.emailConfirmation-container #image {
+  width: 200px;
+}
+
+/* invitation confirmation page css  */
+
+#linkBackToAccount {
+  text-decoration: none;
+  border-radius: 20px;
+  border: 1px solid #f2a51a;
+  background-color: #f2a51a;
+  color: #393e46;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  letter-spacing: 1px;
+  transition: transform 80ms ease-in;
+}
+
+
+
+
+
+
+/* calendar css */
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+.container-content {
+  margin: 20px 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.dhx_cal_navline {
+  background: linear-gradient(to left, #434e5f, #00adb5);
+  color: white;
+}
+
+.dhx_cal_today_button,
+.dhx_cal_tab {
+  color: white;
+}
+
+.dhx_cal_date {
+  color: white;
+  ;
+}
+
+.dhx_cal_event_clear {
+  height: 40px;
+}
+
+/* personal account css */
+
+#upload-file-label {
+  border-radius: 20px;
+  border: 1px solid #f2a51a;
+  background-color: #f2a51a;
+  color: #393e46;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  letter-spacing: 1px;
+  transition: transform 80ms ease-in;
+}
+
+#myFile {
+  display: none;
+}
+
+.img-button {
+  border-radius: 20px;
+  border: 1px solid #f2a51a;
+  background-color: #f2a51a;
+  color: #393e46;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  letter-spacing: 1px;
+  transition: transform 80ms ease-in;
+}
+
+
+
+#invite-button {
+  border-radius: 20px;
+  border: 1px solid #f2a51a;
+  background-color: #f2a51a;
+  color: #393e46;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  letter-spacing: 1px;
+  transition: transform 80ms ease-in;
+  margin-bottom: 5px;
+}
+
+.aboutPadding {
+  padding: 10px;
+
+}
+
+/* delete if needed */
+/* #welcome-margin-top {
+  margin-top: 4px;
+} */
+
+#invite-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-img {
+  height: 100px;
+  width: auto;
+  margin-bottom: 5px;
+  border-radius: 10%;
+  border: 1px solid black;
+}
+
+.date {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#logo {
+  width: 120px;
+  height: auto;
+}
+
+#upload-deleteProfileImg {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  margin: 0 auto;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  ;
+
+}
+
+/* dropdown event details */
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.dropbtn {
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid #f2a51a;
+  background-color: #f2a51a;
+  color: #393e46;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  letter-spacing: 1px;
+  transition: transform 80ms ease-in;
+  outline: none;
+}
+
+
+.dropbtn:focus {
+  color: #393e46;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 31px;
+  overflow: hidden;
+  list-style-type: none;
+  margin-top: 0;
+  padding-left: 0;
+  border-radius: 20px;
+  border: 1px solid #f2a51a;
+  background-color: #f2a51a;
+  color: #393e46;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: transform 80ms ease-in;
+  z-index: 5;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 7px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.dropdown-content a:hover {
+  color: #f1f1f1;
+}
+
+.show {
+  display: block;
+}
+
+.dropdown-content .userEvents {
+  color: green;
+}
+
+.dropdown-content .invitedList {
+  color: blue;
+}
+
+/* css for alert-invite.hbs */
+.select-dropdown {
+  position: relative;
+  background-color: #e6e6e6;
+  width: auto;
+  float: left;
+  max-width: 100%;
+  border-radius: 2px;
+}
+
+.select-dropdown select {
+  font-family: "helvetica neue", helvetica;
+  font-size: 14px;
+  font-weight: 200;
+  max-width: 100%;
+  padding: 8px 24px 8px 10px;
+  border: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 200px
+}
+
+.select-dropdown select:active,
+.select-dropdown select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.select-dropdown:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  margin-top: -2px;
+  right: 8px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #aaa;
+}
+
+
+.select-dropdown {
+  margin-bottom: 10px;
+  margin-top: 10px
+}
+
+/* footer css in layout page */
+#footer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  max-width: 1500px;
+  padding: 0 20px;
+  justify-content: flex-end;
+  line-height: 1.7em;
+}
+
+footer {
+  background-image: linear-gradient(to left, #393e46, #00adb5);
+  color: #fff;
+  margin-top: 11px;
+}
+
+#footer-container a {
+  padding: 10px;
+}
+
+.option {
+  font-size: 14px;
+  text-align: center;
+}
+
+/* about page */
+
+.about-container {
+  height: 83%;
+}
+
+.section-about {
+  line-height: 1em;
+}

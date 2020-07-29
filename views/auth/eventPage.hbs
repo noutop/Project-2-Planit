@@ -1,0 +1,183 @@
+<style>
+    .event-container {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Montserrat", sans-serif;
+        height: 88%;
+        background-color: #eeeeee;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%2300adb5' stroke-width='10' stroke-opacity='0.11'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+
+    }
+
+    .profile-event {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .content-event {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background: linear-gradient(to top, #434e5f, #00adb5);
+        border-radius: 10px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        width: 768px;
+        max-width: 100%;
+        min-height: 480px;
+        color: #f1f1f1;
+    }
+
+    .eventPage-container {
+        margin-top: 20px;
+    }
+
+    #attendees {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 300px;
+        max-width: 100%;
+    }
+
+    #attendeesImg {
+        width: 200px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #attendeesName {
+        width: 200px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #host {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 300px;
+        max-width: 100%;
+    }
+
+    #hostContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+    }
+
+    #host img {
+        width: 100px;
+    }
+
+    #event-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 92px;
+    }
+
+    #h2 {
+        margin-bottom: 10px;
+    }
+
+    .event-container a {
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 20px;
+        border: 1px solid #f2a51a;
+        background-color: #f2a51a;
+        color: #f1f1f1;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 5px 10px;
+        letter-spacing: 1px;
+        transition: transform 80ms ease-in;
+        outline: none;
+    }
+
+    .event-container h3 {
+        text-align: center;
+    }
+</style>
+
+<nav id="navbar">
+    <div class="container">
+        <!-- Clicking on a logo usually brings the user back to the homepage -->
+        <a href="personalAccount"><img id="logo" src="/images/logo.png" alt="logo"></a>
+        <ul>
+            <li><a href="/personalAccount">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/logout">Logout</a></li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="event-container">
+    <div class="eventPage-container">
+        <div class="profile-event">
+            <img class="profile-img" src="{{userImg}}" alt="">
+            <h2 id="h2">{{userName}}</h2>
+        </div>
+        <div class="content-event">
+            <div id="event-details">
+                <h2>{{eventName}}</h2>
+                <h4>From: {{eventStart}}</h4>
+                <h4>To: {{eventEnd}}</h4>
+            </div>
+            <div id="host">
+                <h3>Hosted by</h3>
+                <div id="hostContent">
+                    <img class="event-imgs" src="{{hostImage}}" alt="">
+                    <h5>{{hostName}}</h5>
+                </div>
+            </div>
+            {{#if attendeesImgs}}
+            <div id="attendees">
+                <h3>Attendees</h3>
+                <div id="attendeesContent">
+                    <div id="attendeesImg">
+                        {{#each attendeesImgs}}
+                        <img class="event-imgs" src="{{this}}" alt="">
+                        {{/each}}
+                    </div>
+                    <div id="attendeesName">
+                        {{#each attendeesNames}}
+                        <h5>{{this}}</h5>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <div id="attendees">
+                <h3>Attendees <br>
+                    <a href="/invite">Invite</a></h3>
+                <div id="attendeesContent">
+                    <div id="attendeesImg">
+                    </div>
+                    <div id="attendeesName">
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+
+
+            <h3>{{#if alarmDuration}}Alarm set: {{alarmDuration}} {{else}} Alarm hasn't been set <br> <a
+                    href="/invite">Set an alarm</a> {{/if}}</h3>
+        </div>
+    </div>
+
+</div>

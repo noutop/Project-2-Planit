@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+
+<nav id="navbar">
+  <div class="container">
+    <!-- Clicking on a logo usually brings the user back to the homepage -->
+    <a href="personalAccount"><img id="logo" src="images/logo.png" alt="logo"></a>
+    <ul>
+      <li><a href="personalAccount">Home</a></li>
+      <li><a href="about">About</a></li>
+      <li><a href="logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="emailConfirmation-container">
+  <div class="flex-container">
+    {{#if inviteEmail}}
+    <h2>We sent the invitation email to {{inviteEmail}}</h2>
+
+    <a href="https://icons8.com/icon/64300/send-mail"> <img id="image" src="/images/icons8-send-mail.png" alt=""></a>
+    {{else}}
+    <h2>{{message}}</h2>
+    {{/if}}
+
+    <a href="/personalAccount" id="linkBackToAccount">Go back to your account</a>
+  </div>
+</div>

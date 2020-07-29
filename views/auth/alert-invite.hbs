@@ -1,0 +1,115 @@
+<link rel="stylesheet" href="/stylesheets/signupForm.css">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<style>
+    #alert-profile {
+        text-align: center;
+        margin-top: 20px
+    }
+</style>
+
+
+<nav id="navbar">
+    <div class="container">
+        <!-- Clicking on a logo usually brings the user back to the homepage -->
+        <a href="personalAccount"><img id="logo" src="images/logo.png" alt="logo"></a>
+        <ul>
+            <li><a href="personalAccount">Home</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="logout">Logout</a></li>
+
+        </ul>
+    </div>
+</nav>
+<div id="alert-profile">
+    <img class="profile-img" src={{userImg}} id="profileImg">
+    <h2 id="welcome-margin-top">{{userName}}</h2>
+</div>
+<div class="body-container-alert">
+
+    <div class="container-signupForm" id="container">
+        <div class="form-container sign-up-container">
+            <form action="/reminder" method="POST">
+                <h1>Set a Reminder</h1>
+                <p id="alarmMessage">{{message}}</p>
+
+                <h4>Choose an Event</h4>
+
+                <div class="select-dropdown">
+                    <select class="select" name="events">
+                        {{#each alarmList}}
+                        <option class="option" value="{{this._id}}">{{this.text}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <h4>Choose a time</h4>
+
+                <div class="select-dropdown">
+                    <select class="select" name="alertOption">
+                        <option class="option" value="2-days" id="option">Alert 2 days before</option>
+                        <option class="option" value="1-day">Alert 1 day before</option>
+                        <option class="option" value="6-hours">Alert 6 hours before</option>
+                    </select>
+                </div>
+                <button type="submit">Done</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="/invite" method="POST">
+                <h1>Invite</h1>
+                <h4>Choose an event</h4>
+
+                <div class="select-dropdown">
+                    <select class="select" name="event">
+                        {{#each inviteList}}
+                        <option class="option" value="{{this._id}}">{{this.text}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="inputInvite">
+                    <input type="email" name="email" placeholder="Email">
+                </div>
+                <button type="submit">Invite</button>
+            </form>
+            <button id="create-input" onclick="addInputField()">Add another invitee</button>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Invitation page</h1>
+                    <p>Invite someone to your cool event</p>
+                    <button class="ghost" id="signIn">Invite</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Reminder</h1>
+                    <p>Choose an event</p>
+                    <button class="ghost" id="signUp">Reminder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/javascripts/signupForm.js"></script>
+<script>
+    let count = 0;
+    let max = 3;
+    let topPosition = 75;
+    function addInputField() {
+        count += 1;
+        topPosition += 5;
+        console.log("outPut: addInputField -> count", count)
+        if (count <= max) {
+            let input = document.createElement("input");
+            console.log("outPut: addInputField -> input", input)
+            let br = document.createElement("br");
+            console.log("outPut: addInputField -> br", br)
+            input.setAttribute("type", "email");
+            input.setAttribute("name", "email");
+            input.setAttribute("placeholder", "Email");
+            document.querySelectorAll(".sign-in-container .inputInvite ")[0].appendChild(input);
+            document.querySelectorAll(".sign-in-container .inputInvite")[0].appendChild(br);
+            console.log(document.querySelectorAll(".form-container"));
+
+            document.getElementById("create-input").style.top = topPosition + "%";
+        }
+    }
+</script>

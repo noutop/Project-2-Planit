@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.7em;
+  /* overflow: hidden; */
+}
+
+a {
+  /* color of navbar text */
+
+
+  /* removes underline of navbar text */
+  text-decoration: none;
+}
+
+h1 {
+  /* because we removed browser's automatic padding */
+  padding-bottom: 20px;
+}
+
+.container {
+  /* push it all to the middle */
+  margin: auto;
+
+  /* to make it somewhat responsive */
+  max-width: 1500px;
+
+  /* so that it always shows the background */
+  /* overflow: auto; */
+
+  padding: 0 20px;
+}
+
+#navbar {
+  background-image: linear-gradient(to right, #393e46, #00adb5);
+
+  color: #fff;
+  /* overflow ensures that the background shows no matter what */
+  overflow: auto;
+
+
+}
+
+#navbar a {
+  /* this enables the text to display by tapping specifically into the link white contains the text */
+  color: #fff;
+}
+
+#navbar h1 {
+  float: left;
+  /* padding to the top to push it down a little bit */
+  padding-top: 20px;
+}
+
+#navbar ul {
+  /* to remove bullets */
+  list-style: none;
+
+  /* move navbar menu to the right */
+  float: right;
+}
+
+#navbar ul li {
+  /* to  make text horizontal */
+  float: left;
+}
+
+#navbar ul li a {
+  display: block;
+  /* implements 20px all around so thhere is spacing between them */
+  padding: 20px;
+  text-align: center;
+}
+
+#navbar ul li a:hover {
+  color: #393e46;
+}
